@@ -5,9 +5,16 @@ import belajar.spring.iocdi.KoneksiDatabase;
 public class NasabahDaoDI {
 	private KoneksiDatabase koneksiDatabase;
 
-	public NasabahDaoDI() {
-		// tanpa inisialisasi karena sudah dihandle class lain
+	/**
+	 * Constructor Injection, 
+	 * menggunakan Constructor Injection akan memaksa kita untuk melakukan injection 
+	 * setiap kali akan memanggil objek dari class DAO ini
+	 * @param koneksiDatabase
+	 */
+	public NasabahDaoDI(KoneksiDatabase koneksiDatabase) {
+		this.koneksiDatabase = koneksiDatabase;
 	}
+
 
 	//setter injection
 	public void setKoneksiDatabase(KoneksiDatabase koneksiDatabase) {
